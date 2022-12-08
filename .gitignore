@@ -1,2 +1,8 @@
 
 .idea/
+/src/main/resources/hikari.properties
+/log.log
+
+*.class
+
+target/

@@ -2,6 +2,10 @@ package com.utibe.datasource;
 
 import javax.sql.DataSource;
 
+import com.utibe.datasource.connectionpools.UtyC3P0DataSource;
+import com.utibe.datasource.connectionpools.UtyDbcpBasicDataSource;
+import com.utibe.datasource.connectionpools.UtyDbcpPoolingDataSource;
+import com.utibe.datasource.connectionpools.UtyHikariDataSource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

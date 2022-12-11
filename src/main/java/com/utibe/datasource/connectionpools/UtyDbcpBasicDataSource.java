@@ -1,6 +1,7 @@
-package com.utibe.datasource;
+package com.utibe.datasource.connectionpools;
 
 
+import com.utibe.datasource.UtyDataSource;
 import org.apache.commons.dbcp2.BasicDataSource;
 
 import javax.sql.DataSource;
@@ -12,7 +13,7 @@ import org.slf4j.LoggerFactory;
 
 
 
-public class UtyDbcpBasicDataSource extends UtyDataSource{
+public class UtyDbcpBasicDataSource extends UtyDataSource {
 
     private final static Logger logger = LoggerFactory.getLogger(UtyHikariDataSource.class);
 

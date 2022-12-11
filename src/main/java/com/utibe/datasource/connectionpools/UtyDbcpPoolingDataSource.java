@@ -1,5 +1,6 @@
-package com.utibe.datasource;
+package com.utibe.datasource.connectionpools;
 
+import com.utibe.datasource.UtyDataSource;
 import org.apache.commons.pool2.ObjectPool;
 import org.apache.commons.pool2.impl.GenericObjectPool;
 import org.apache.commons.dbcp2.ConnectionFactory;
@@ -17,7 +18,7 @@ import java.sql.SQLException;
 import java.util.Properties;
 
 
-public class UtyDbcpPoolingDataSource extends UtyDataSource{
+public class UtyDbcpPoolingDataSource extends UtyDataSource {
 
     private final static Logger logger = LoggerFactory.getLogger(UtyHikariDataSource.class);
 

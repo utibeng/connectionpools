@@ -1,6 +1,7 @@
-package com.utibe.datasource;
+package com.utibe.datasource.connectionpools;
 
 import com.mchange.v2.c3p0.ComboPooledDataSource;
+import com.utibe.datasource.UtyDataSource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -10,7 +11,7 @@ import java.sql.SQLException;
 import java.util.Properties;
 
 
-public class UtyC3P0DataSource extends UtyDataSource{
+public class UtyC3P0DataSource extends UtyDataSource {
 
     private final static Logger logger = LoggerFactory.getLogger(UtyC3P0DataSource.class);
 

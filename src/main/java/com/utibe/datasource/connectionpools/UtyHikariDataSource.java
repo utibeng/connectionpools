@@ -1,5 +1,6 @@
-package com.utibe.datasource;
+package com.utibe.datasource.connectionpools;
 
+import com.utibe.datasource.UtyDataSource;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 
@@ -9,7 +10,7 @@ import org.slf4j.LoggerFactory;
 import javax.sql.DataSource;
 import java.util.Properties;
 
-public class UtyHikariDataSource extends UtyDataSource{
+public class UtyHikariDataSource extends UtyDataSource {
 
     private final static Logger logger = LoggerFactory.getLogger(UtyHikariDataSource.class);
 

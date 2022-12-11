@@ -1,7 +1,6 @@
 package com.utibe.datasource;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Properties;
@@ -9,9 +8,9 @@ import java.util.Properties;
 import javax.sql.DataSource;
 
 import com.mchange.v2.c3p0.ComboPooledDataSource;
+import com.utibe.datasource.connectionpools.UtyHikariDataSource;
 import com.zaxxer.hikari.HikariDataSource;
 import org.apache.commons.dbcp2.BasicDataSource;
-import org.apache.commons.dbcp2.PoolableConnection;
 import org.apache.commons.dbcp2.PoolingDataSource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

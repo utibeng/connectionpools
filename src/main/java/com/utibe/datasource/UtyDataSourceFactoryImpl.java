@@ -23,6 +23,10 @@ public class UtyDataSourceFactoryImpl implements UtyDataSourceFactory{
             logger.info("Apache Dbcp polling data selected, will attempt to configure");
             return UtyDbcpPoolingDataSource.createDbcpDataSource();
         }
+        else if(datasourceType.equalsIgnoreCase("c3p0")){
+            logger.info("C3P0 data selected, will attempt to configure");
+            return UtyC3P0DataSource.createC3P0DataSource();
+        }
 
         logger.error("Invalid datasource type specified, will exit");
 

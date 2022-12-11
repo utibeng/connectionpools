@@ -12,13 +12,16 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+//https://mvnrepository.com/open-source/jdbc-pools?p=1
+
 
 public class MainBatchJob {
 
     private final static Logger logger = LoggerFactory.getLogger(MainBatchJob.class);
     //private final static String connectionPoolType = "HikaRi";
     //private final static String connectionPoolType = "dbcp-basic";
-    private final static String connectionPoolType = "dbcp-polling-data";
+    //private final static String connectionPoolType = "dbcp-polling-data";
+    private final static String connectionPoolType = "C3p0";
 
 
 

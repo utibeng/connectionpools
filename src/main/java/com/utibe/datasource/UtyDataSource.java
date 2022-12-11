@@ -71,6 +71,11 @@ public abstract class UtyDataSource {
             ComboPooledDataSource comboPooledDataSource = (ComboPooledDataSource)dataSource;
             comboPooledDataSource.close();
         }
+        else if(connectionPoolType.equalsIgnoreCase("tomcat")){
+            logger.info("Closing tomcat connection pool");
+            org.apache.tomcat.jdbc.pool.DataSource tomcatDataSource = (org.apache.tomcat.jdbc.pool.DataSource)dataSource;
+            tomcatDataSource.close();
+        }
 
     }
 }

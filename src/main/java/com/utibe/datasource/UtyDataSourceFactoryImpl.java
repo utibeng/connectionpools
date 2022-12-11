@@ -2,10 +2,7 @@ package com.utibe.datasource;
 
 import javax.sql.DataSource;
 
-import com.utibe.datasource.connectionpools.UtyC3P0DataSource;
-import com.utibe.datasource.connectionpools.UtyDbcpBasicDataSource;
-import com.utibe.datasource.connectionpools.UtyDbcpPoolingDataSource;
-import com.utibe.datasource.connectionpools.UtyHikariDataSource;
+import com.utibe.datasource.connectionpools.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -30,6 +27,10 @@ public class UtyDataSourceFactoryImpl implements UtyDataSourceFactory{
         else if(datasourceType.equalsIgnoreCase("c3p0")){
             logger.info("C3P0 data selected, will attempt to configure");
             return UtyC3P0DataSource.createC3P0DataSource();
+        }
+        else if(datasourceType.equalsIgnoreCase("tomcat")){
+            logger.info("tomcat data selected, will attempt to configure");
+            return UtyTomcatDataSource.createTomcatDataSource();
         }
 
         logger.error("Invalid datasource type specified, will exit");

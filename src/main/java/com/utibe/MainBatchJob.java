@@ -21,7 +21,8 @@ public class MainBatchJob {
     //private final static String connectionPoolType = "HikaRi";
     //private final static String connectionPoolType = "dbcp-basic";
     //private final static String connectionPoolType = "dbcp-polling-data";
-    private final static String connectionPoolType = "C3p0";
+    //private final static String connectionPoolType = "C3p0";
+    private final static String connectionPoolType = "tomcat";
 
 
 

@@ -12,11 +12,11 @@ import org.slf4j.LoggerFactory;
 
 
 
-public class UtyDbcpDataSource extends UtyDataSource{
+public class UtyDbcpBasicDataSource extends UtyDataSource{
 
     private final static Logger logger = LoggerFactory.getLogger(UtyHikariDataSource.class);
 
-    public UtyDbcpDataSource (){
+    public UtyDbcpBasicDataSource(){
 
     }
 
@@ -33,7 +33,7 @@ public class UtyDbcpDataSource extends UtyDataSource{
 
     public static DataSource createDbcpDataSource(){
         BasicDataSource basicDataSource = new BasicDataSource();
-        UtyDbcpDataSource.configureBasicDataSource(basicDataSource);
+        UtyDbcpBasicDataSource.configureBasicDataSource(basicDataSource);
         return basicDataSource;
     }
 

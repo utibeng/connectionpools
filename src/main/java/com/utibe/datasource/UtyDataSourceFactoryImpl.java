@@ -2,7 +2,6 @@ package com.utibe.datasource;
 
 import javax.sql.DataSource;
 
-import com.utibe.MainBatchJob;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -18,7 +17,11 @@ public class UtyDataSourceFactoryImpl implements UtyDataSourceFactory{
         else if(datasourceType.equalsIgnoreCase("dbcp-basic")){
             logger.info("Apache Dbcp datasource selected, will attempt to configure");
             //return UtyHikariDataSource.createHikariDataSource();
-            return UtyDbcpDataSource.createDbcpDataSource();
+            return UtyDbcpBasicDataSource.createDbcpDataSource();
+        }
+        else if(datasourceType.equalsIgnoreCase("dbcp-polling-data")){
+            logger.info("Apache Dbcp polling data selected, will attempt to configure");
+            return UtyDbcpPoolingDataSource.createDbcpDataSource();
         }
 
         logger.error("Invalid datasource type specified, will exit");

@@ -17,7 +17,8 @@ public class MainBatchJob {
 
     private final static Logger logger = LoggerFactory.getLogger(MainBatchJob.class);
     //private final static String connectionPoolType = "HikaRi";
-    private final static String connectionPoolType = "dbcp-basic";
+    //private final static String connectionPoolType = "dbcp-basic";
+    private final static String connectionPoolType = "dbcp-polling-data";
 
 
 

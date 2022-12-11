@@ -1,6 +1,8 @@
 package com.utibe;
 
-import com.utibe.datasource.UtyDatasource;
+import com.utibe.datasource.UtyDataSource;
+import com.utibe.datasource.UtyDataSourceFactory;
+import com.utibe.datasource.UtyDataSourceFactoryImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -13,21 +15,21 @@ import java.sql.SQLException;
 
 public class MainBatchJob {
 
-    //private static final Logger logger = LogManager.getLogger();
     private final static Logger logger = LoggerFactory.getLogger(MainBatchJob.class);
+    //private final static String connectionPoolType = "HikaRi";
+    private final static String connectionPoolType = "dbcp-basic";
+
 
 
     public static void main (String [] args){
 
-        logger.info("emile");
-
-        UtyDatasource utyDatasource = new UtyDatasource("HIKARI");
+        UtyDataSourceFactory utyDataSourceFactory = new UtyDataSourceFactoryImpl();
+        DataSource datasource = utyDataSourceFactory.createDataSource(connectionPoolType);
 
         Connection connection = null;
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
 
-        DataSource datasource = utyDatasource.getDataSource();
 
         try{
             connection = datasource.getConnection();
@@ -61,20 +63,16 @@ public class MainBatchJob {
                     connection.close();
                 }
 
+                UtyDataSource.closeConnection(connectionPoolType, datasource);
+
                 //datasource.close();
 
-            } catch (SQLException exception) {
+            }
+            catch (SQLException exception) {
 
                 logger.error("Problem querying Hosts table, {}", exception.getMessage());
-
-                //Logger lgr = Logger.getLogger(HikariCPEx.class.getName());
-                //lgr.log(Level.WARNING, ex.getMessage(), ex);
             }
         }
-
-
-
-
     }
 
 }

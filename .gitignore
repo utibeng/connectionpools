@@ -1,6 +1,6 @@
 
 .idea/
-/src/main/resources/hikari.properties
+/src/main/resources/datasource.properties
 /log.log
 
 *.class
